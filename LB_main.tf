@@ -49,7 +49,7 @@ resource "azurerm_lb_probe" "frontend_lbp" {
 
 resource "azurerm_lb_rule" "frontend_lbrule" {
   loadbalancer_id                = azurerm_lb.frontend_lb.id
-  name                           = "LBRule"
+  name                           = "LBRule01"
   protocol                       = "Tcp"
   frontend_port                  = 3389
   backend_port                   = 3389
