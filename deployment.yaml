@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: shubh-deploy
+  labels: 
+    dhoondhu: mai
+spec:
+  replicas: 4
+  selector:
+    matchExpressions:
+    - key: gajodhar
+      operator: In
+      values: 
+       - mai_hu
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template: 
+    metadata:
+      labels:
+        gajodhar: mai_hu
+      name:  gajhodhar-ka-pod 
+    spec:
+      containers:
+      - image: devopsinsiders/netflix-clone
+        name: dhoondhu-ka-image  
+        ports:
+        - containerPort: 80
+
+
+
+
+
+
